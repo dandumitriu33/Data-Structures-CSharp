@@ -1,5 +1,6 @@
 ﻿using System;
 using DataStructuresPractice.HashMap;
+using DataStructuresPractice.Heap;
 using DataStructuresPractice.Tree;
 
 namespace DataStructuresPractice
@@ -73,38 +74,55 @@ namespace DataStructuresPractice
 
             #region Binary Search Tree
 
-            BinaryTree binaryTree = new BinaryTree();
+            //BinaryTree binaryTree = new BinaryTree();
 
-            binaryTree.Add(1);
-            binaryTree.Add(2);
-            binaryTree.Add(7);
-            binaryTree.Add(3);
-            binaryTree.Add(10);
-            binaryTree.Add(5);
-            binaryTree.Add(8);
+            //binaryTree.Add(1);
+            //binaryTree.Add(2);
+            //binaryTree.Add(7);
+            //binaryTree.Add(3);
+            //binaryTree.Add(10);
+            //binaryTree.Add(5);
+            //binaryTree.Add(8);
 
-            Node node = binaryTree.Find(5);
-            int depth = binaryTree.GetTreeDepth();
+            //Node node = binaryTree.Find(5);
+            //int depth = binaryTree.GetTreeDepth();
 
-            Console.WriteLine("PreOrder Traversal:");
-            binaryTree.TraversePreOrder(binaryTree.Root);
-            Console.WriteLine();
+            //Console.WriteLine("PreOrder Traversal:");
+            //binaryTree.TraversePreOrder(binaryTree.Root);
+            //Console.WriteLine();
 
-            Console.WriteLine("InOrder Traversal:");
-            binaryTree.TraverseInOrder(binaryTree.Root);
-            Console.WriteLine();
+            //Console.WriteLine("InOrder Traversal:");
+            //binaryTree.TraverseInOrder(binaryTree.Root);
+            //Console.WriteLine();
 
-            Console.WriteLine("PostOrder Traversal:");
-            binaryTree.TraversePostOrder(binaryTree.Root);
-            Console.WriteLine();
+            //Console.WriteLine("PostOrder Traversal:");
+            //binaryTree.TraversePostOrder(binaryTree.Root);
+            //Console.WriteLine();
 
-            binaryTree.Remove(7);
-            binaryTree.Remove(8);
+            //binaryTree.Remove(7);
+            //binaryTree.Remove(8);
 
-            Console.WriteLine("PreOrder Traversal After Removing Operation:");
-            binaryTree.TraversePreOrder(binaryTree.Root);
-            Console.WriteLine();
+            //Console.WriteLine("PreOrder Traversal After Removing Operation:");
+            //binaryTree.TraversePreOrder(binaryTree.Root);
+            //Console.WriteLine();
+            #endregion
 
+            #region MinHeap
+
+            MinHeap minimum = new MinHeap(11);
+            minimum.Add(11);
+            minimum.Add(10);
+            minimum.Add(7);
+            minimum.Add(9);
+            minimum.Add(5);
+            minimum.Add(6);
+            minimum.Add(4);
+            minimum.Add(8);
+            minimum.Add(2);
+            minimum.Add(3);
+            minimum.Add(1);
+
+            Console.WriteLine($"The minimum is: {minimum.Peek()}");
 
             #endregion
 
