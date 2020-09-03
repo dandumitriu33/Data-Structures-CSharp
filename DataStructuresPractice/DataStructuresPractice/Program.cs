@@ -1,5 +1,6 @@
 ﻿using System;
 using DataStructuresPractice.HashMap;
+using DataStructuresPractice.Tree;
 
 namespace DataStructuresPractice
 {
@@ -40,34 +41,71 @@ namespace DataStructuresPractice
             #endregion
 
             #region Trie w/ find prefix and find word
-            Trie.Trie t = new Trie.Trie();
-            t.CreateRoot();
-            Console.WriteLine("The list of words is: abc, abgl, cdf, abcd, lmn.");
-            t.Add("abc".ToCharArray());
-            t.Add("abgl".ToCharArray());
-            t.Add("cdf".ToCharArray());
-            t.Add("abcd".ToCharArray());
-            t.Add("lmn".ToCharArray());
+            //Trie.Trie t = new Trie.Trie();
+            //t.CreateRoot();
+            //Console.WriteLine("The list of words is: abc, abgl, cdf, abcd, lmn.");
+            //t.Add("abc".ToCharArray());
+            //t.Add("abgl".ToCharArray());
+            //t.Add("cdf".ToCharArray());
+            //t.Add("abcd".ToCharArray());
+            //t.Add("lmn".ToCharArray());
 
-            string search1 = "ab";
-            bool findPrefix1 = t.FindPrefix(search1.ToCharArray());
-            Console.WriteLine($"The search for '{search1}' resulted in: {findPrefix1}");
-            string search2 = "lo";
-            bool findPrefix2 = t.FindPrefix(search2.ToCharArray());
-            Console.WriteLine($"The search for '{search2}' resulted in: {findPrefix2}");
+            //string search1 = "ab";
+            //bool findPrefix1 = t.FindPrefix(search1.ToCharArray());
+            //Console.WriteLine($"The search for '{search1}' resulted in: {findPrefix1}");
+            //string search2 = "lo";
+            //bool findPrefix2 = t.FindPrefix(search2.ToCharArray());
+            //Console.WriteLine($"The search for '{search2}' resulted in: {findPrefix2}");
 
-            string searchWord1 = "lmn";
-            bool findWord1 = t.FindWord(searchWord1.ToCharArray());
-            Console.WriteLine($"The search for '{searchWord1}' resulted in: {findWord1}");
-            string searchWord2 = "ab";
-            bool findWord2 = t.FindWord(searchWord2.ToCharArray());
-            Console.WriteLine($"The search for '{searchWord2}' resulted in: {findWord2}");
-            string searchWord3 = "cdf";
-            bool findWord3 = t.FindWord(searchWord3.ToCharArray());
-            Console.WriteLine($"The search for '{searchWord3}' resulted in: {findWord3}");
-            string searchWord4 = "ghi";
-            bool findWord4 = t.FindWord(searchWord4.ToCharArray());
-            Console.WriteLine($"The search for '{searchWord4}' resulted in: {findWord4}");
+            //string searchWord1 = "lmn";
+            //bool findWord1 = t.FindWord(searchWord1.ToCharArray());
+            //Console.WriteLine($"The search for '{searchWord1}' resulted in: {findWord1}");
+            //string searchWord2 = "ab";
+            //bool findWord2 = t.FindWord(searchWord2.ToCharArray());
+            //Console.WriteLine($"The search for '{searchWord2}' resulted in: {findWord2}");
+            //string searchWord3 = "cdf";
+            //bool findWord3 = t.FindWord(searchWord3.ToCharArray());
+            //Console.WriteLine($"The search for '{searchWord3}' resulted in: {findWord3}");
+            //string searchWord4 = "ghi";
+            //bool findWord4 = t.FindWord(searchWord4.ToCharArray());
+            //Console.WriteLine($"The search for '{searchWord4}' resulted in: {findWord4}");
+            #endregion
+
+            #region Binary Search Tree
+
+            BinaryTree binaryTree = new BinaryTree();
+
+            binaryTree.Add(1);
+            binaryTree.Add(2);
+            binaryTree.Add(7);
+            binaryTree.Add(3);
+            binaryTree.Add(10);
+            binaryTree.Add(5);
+            binaryTree.Add(8);
+
+            Node node = binaryTree.Find(5);
+            int depth = binaryTree.GetTreeDepth();
+
+            Console.WriteLine("PreOrder Traversal:");
+            binaryTree.TraversePreOrder(binaryTree.Root);
+            Console.WriteLine();
+
+            Console.WriteLine("InOrder Traversal:");
+            binaryTree.TraverseInOrder(binaryTree.Root);
+            Console.WriteLine();
+
+            Console.WriteLine("PostOrder Traversal:");
+            binaryTree.TraversePostOrder(binaryTree.Root);
+            Console.WriteLine();
+
+            binaryTree.Remove(7);
+            binaryTree.Remove(8);
+
+            Console.WriteLine("PreOrder Traversal After Removing Operation:");
+            binaryTree.TraversePreOrder(binaryTree.Root);
+            Console.WriteLine();
+
+
             #endregion
 
         }
